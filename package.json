@@ -5,7 +5,7 @@
     "Luis Montes"
   ],
   "license": "MIT",
-  "name": "@abandonware/noble",
+  "name": "noble-unix",
   "description": "A Node.js BLE (Bluetooth Low Energy) central library.",
   "version": "1.9.2-3",
   "repository": {
@@ -29,8 +29,7 @@
   "os": [
     "darwin",
     "linux",
-    "freebsd",
-    "win32"
+    "freebsd"
   ],
   "dependencies": {
     "debug": "^4.1.0",
