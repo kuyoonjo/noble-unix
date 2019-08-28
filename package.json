@@ -29,7 +29,8 @@
   "os": [
     "darwin",
     "linux",
-    "freebsd"
+    "freebsd",
+    "win32"
   ],
   "dependencies": {
     "debug": "^4.1.0",
