@@ -29,16 +29,12 @@
   "os": [
     "darwin",
     "linux",
-    "freebsd",
-    "win32"
+    "freebsd"
   ],
   "dependencies": {
     "debug": "^4.1.0",
     "napi-thread-safe-callback": "0.0.6",
     "node-addon-api": "^1.1.0"
-  },
-  "optionalDependencies": {
-    "@abandonware/bluetooth-hci-socket": "^0.5.3-1"
   },
   "devDependencies": {
     "async": "^3.1.0",
