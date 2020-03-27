@@ -7,7 +7,7 @@
   "license": "MIT",
   "name": "@kuyoonjo/noble-unix",
   "description": "A Node.js BLE (Bluetooth Low Energy) central library.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/kuyoonjo/noble-unix.git"
@@ -26,6 +26,7 @@
   "engines": {
     "node": ">=10"
   },
+  "gypfile": true,
   "os": [
     "darwin",
     "linux",
@@ -49,10 +50,10 @@
   },
   "scripts": {
     "pretest": "jshint *.js lib/. test/.",
-    "test": "mocha -R spec test/*.js"
+    "test": "mocha -R spec test/*.js",
+    "install": "prebuild-install --force || echo skip"
   },
   "browser": {
     "./lib/resolve-bindings.js": "./lib/resolve-bindings-web.js"
-  },
-  "install": "prebuild-install --force || echo skip"
+  }
 }
