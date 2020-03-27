@@ -10,10 +10,10 @@
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/abandonware/noble.git"
+    "url": "https://github.com/kuyoonjo/noble-unix.git"
   },
   "bugs": {
-    "url": "https://github.com/abandonware/noble/issues"
+    "url": "https://github.com/kuyoonjo/noble-unix/issues"
   },
   "keywords": [
     "bluetooth",
