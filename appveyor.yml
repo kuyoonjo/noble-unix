@@ -13,8 +13,6 @@ install:
   - ps: npm -v
   - ps: node-gyp -v
   - cmd: npm --loglevel=error i
-  - cmd: npm run build:source
-  - cmd: npm run ci
   - ps: echo "tag $env:appveyor_repo_tag_name branch $env:APPVEYOR_REPO_BRANCH"
 build_script:
   - ps: $arch = $env:platform
