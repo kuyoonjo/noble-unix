@@ -1,0 +1,26 @@
+# vs 2017 image because Windows SDK 10.0.15063.0 is not available on vs 2015 image
+image: Visual Studio 2017
+
+platform:
+- x64
+
+install:
+  - ps: Update-NodeJsInstallation (Get-NodeJsLatestBuild "12.16.0") $env:platform;
+  - ps: |
+        npm --loglevel=error i -g node-gyp 2>&1 | out-null
+        if ($LASTEXITCODE -NE 0) { throw "Failed installing node-gyp"; }
+  - ps: node -v
+  - ps: npm -v
+  - ps: node-gyp -v
+  - cmd: npm --loglevel=error i
+  - cmd: npm run build:source
+  - cmd: npm run ci
+  - ps: echo "tag $env:appveyor_repo_tag_name branch $env:APPVEYOR_REPO_BRANCH"
+build_script:
+  - ps: $arch = $env:platform
+  - ps: if ($arch -match "x86") { $arch="ia32"; }
+  - ps: |
+      npm --loglevel=error i -g prebuild 2>&1 | write-host
+      prebuild -t 12.16.0 -r node --upload $env:prebuild_upload 2>&1 | write-host
+      prebuild -t 5.0.10 -r electron --upload $env:prebuild_upload 2>&1 | write-host
+      echo "done."
